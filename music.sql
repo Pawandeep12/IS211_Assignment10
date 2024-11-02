@@ -1,4 +1,3 @@
--- music.sql
 CREATE TABLE artists (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL
@@ -14,9 +13,8 @@ CREATE TABLE albums (
 CREATE TABLE songs (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
-    album_id INTEGER,
     track_number INTEGER,
-    duration INTEGER,  -- Duration in seconds
+    duration INTEGER,
+    album_id INTEGER,
     FOREIGN KEY (album_id) REFERENCES albums(id)
 );
-
