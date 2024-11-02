@@ -11,7 +11,6 @@ def load_data():
         (3, 'Sara', 'White', 27),
         (4, 'William', 'Gibson', 23),
     ]
-    
     cursor.executemany("INSERT INTO person VALUES (?, ?, ?, ?)", persons)
 
     # Insert data into pet table
@@ -23,24 +22,17 @@ def load_data():
         (5, 'Rufus', 'Cocker Spaniel', 1, 0),
         (6, 'Spot', 'Bloodhound', 2, 1),
     ]
-
     cursor.executemany("INSERT INTO pet VALUES (?, ?, ?, ?, ?)", pets)
 
     # Insert data into person_pet table
     person_pets = [
-        (1, 1),
-        (1, 2),
-        (2, 3),
-        (2, 4),
-        (3, 5),
-        (4, 6),
+        (1, 1), (1, 2), (2, 3), (2, 4), (3, 5), (4, 6),
     ]
-
     cursor.executemany("INSERT INTO person_pet VALUES (?, ?)", person_pets)
 
     connection.commit()
     connection.close()
+    print("Data loaded into pets.db.")
 
 if __name__ == "__main__":
     load_data()
-    print("Data loaded into pets.db.")
